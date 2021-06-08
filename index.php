@@ -1,29 +1,6 @@
-<?php 
 
-  $products = [
-    [
-      "name" => "アボカド",
-      "price" => 230,
-      "image" => "./images/image_1.jpg"
-    ],
-    [
-      "name" => "オレンジ",
-      "price" => 100,
-      "image" => "./images/image_2.jpg"
-    ],
-    [
-      "name" => "レモン",
-      "price" => 150,
-      "image" => "./images/image_3.jpg"
-    ],
-    [
-      "name" => "パイナップル",
-      "price" => 500,
-      "image" => "./images/image_4.jpg"
-    ]
-    ];
-?>
-
+<?php require_once 'products.php'; ?>
+<?php require_once 'functions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +20,7 @@
           <img class="card-image" src="<?php echo $product["image"]; ?>" alt="">
           <p class="card-title"><?php echo $product["name"]; ?></p>
           <div class="flex justify-between">
-            <p class="card-price"><?php echo $product["price"]."円"; ?></p>
+            <p class="card-price"><?php echo displayPrice($product["price"]); ?></p>
             <input min="0" class="item-number" type="number" value="0">
           </div>
         </div>
