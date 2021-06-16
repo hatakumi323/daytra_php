@@ -16,7 +16,7 @@
             <img class="cart-item-img" src="./images/image_1.jpg">
             <div class="cart-item-detail">
               <p class="cart-item-title">アボカド</p>
-              <p>2 × 250円</p>
+              <p><?php echo $_POST["avocado"]; ?> × 250円</p>
             </div>
           </div>
         </div>
