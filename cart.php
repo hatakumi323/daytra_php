@@ -1,3 +1,5 @@
+<?php require_once 'products.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,42 +13,17 @@
     <div class="app-container">
       <h1 class="title">Shopping Cart</h1>
       <div class="carts-container">
+      <?php foreach($products as $product): ?>
         <div class="cart-item">
           <div class="flex">
-            <img class="cart-item-img" src="./images/image_1.jpg">
+            <img class="cart-item-img" src="<?php echo $product["image"]; ?>">
             <div class="cart-item-detail">
-              <p class="cart-item-title">アボカド</p>
-              <p><?php echo $_POST["avocado"]; ?> × 250円</p>
+              <p class="cart-item-title"><?php echo $product["name"]; ?></p>
+              <p><?php echo $_POST[$product["id"]]; ?> × <?php echo $product["price"]; ?></p>
             </div>
           </div>
         </div>
-        <div class="cart-item">
-          <div class="flex">
-            <img class="cart-item-img" src="./images/image_2.jpg">
-            <div class="cart-item-detail">
-              <p class="cart-item-title">オレンジ</p>
-              <p>2 × 250円</p>
-            </div>
-          </div>
-        </div>
-        <div class="cart-item">
-          <div class="flex">
-            <img class="cart-item-img" src="./images/image_3.jpg">
-            <div class="cart-item-detail">
-              <p class="cart-item-title">レモン</p>
-              <p>2 × 250円</p>
-            </div>
-          </div>
-        </div>
-        <div class="cart-item">
-          <div class="flex">
-            <img class="cart-item-img" src="./images/image_4.jpg">
-            <div class="cart-item-detail">
-              <p class="cart-item-title">パイナップル</p>
-              <p>2 × 250円</p>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
       <div class="btn-footer bg-gray">
         <input class="checkout-btn" type="submit" value="決済する">
